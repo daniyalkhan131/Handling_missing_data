@@ -38,3 +38,31 @@ less than 5% data misssing(if like 95%data missing in one column then remove tha
 in cca for numerical data we se distribution(hist or pdf) before after same or not
 	for categorical data we see ration of each category should be same before after
 
+2-handling missing numerical data
+types-
+	univariate imputation- if statistical tech applied to that single column for which deaing with missing values.
+	multivariate imutation- when considering multiple or all the columnns of dataset for filling mkssing value of single column
+		types KNN imputer and iterative imputer
+
+univariate for numerical
+	mean/median
+	arbitary
+	end of distribution
+	random
+
+benifit- simple to use
+	choose mean if data dist. is near to normal and median  if skewed
+	in production useful as can replace missing value with mean/median
+disadv- it change distibution shape, as puting mean/median for all
+	use when <5%, it is not generally used
+	extra outliers comes, which previously not there
+	covariance/correlation changes (relationship with other var)
+all above disadv is very dangerous
+
+when to use-
+	data missing completely at random
+	<5%
+
+two ways of doing-
+	pandas
+	scikit learn( prefer this as can be put in the production easily)
