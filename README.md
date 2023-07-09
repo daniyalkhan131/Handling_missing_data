@@ -38,7 +38,12 @@ less than 5% data misssing(if like 95%data missing in one column then remove tha
 in cca for numerical data we se distribution(hist or pdf) before after same or not
 	for categorical data we see ration of each category should be same before after
 
-2-handling missing numerical data
+
+
+ 
+
+2- impute-
+handling missing numerical data
 types-
 	univariate imputation- if statistical tech applied to that single column for which deaing with missing values.
 	multivariate imutation- when considering multiple or all the columnns of dataset for filling mkssing value of single column
@@ -66,3 +71,13 @@ when to use-
 two ways of doing-
 	pandas
 	scikit learn( prefer this as can be put in the production easily)
+
+
+handling missing catagorical data-
+	most frequent se replace
+	create new category missing
+
+if MCAR and <5% then apply mode(frequency)
+change data dist.
+
+if not MCAR and >10% then make missing category
