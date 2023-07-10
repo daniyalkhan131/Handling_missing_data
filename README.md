@@ -81,3 +81,29 @@ if MCAR and <5% then apply mode(frequency)
 change data dist.
 
 if not MCAR and >10% then make missing category
+
+
+Random imputer-
+replace nan with other numbers in dataset choosen randomly
+applied to both cat. and num. data
+not present in sklearn, it is in pandas
+it dont change the data distribution and variance because when we take no. randomly so-chance of getting the n. that occur more is higher so like think in terms of normal dist.-
+middle part remain like that.
+work best with linear or log regression as data dist remain same is good, but-
+with dicision tree not work good as we put randomness
+covariance got changed
+memory heavy for deployment as need to keep training data
+
+ 
+
+missing Indicator-
+prepare a column that contain true when corresponding value in other col. is nan and false when not nan like creating age_na for age column
+it is very good in performance sometimes, clear working not understandable but model learn to-
+differentiates between missing and non missing rows
+not always good but can try it if want to improve
+it was once used by student in KDD competition and the won
+
+
+
+Automatic select the best imputer-
+use gridsearchCV, present in sklearn
