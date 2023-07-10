@@ -107,3 +107,42 @@ it was once used by student in KDD competition and the won
 
 Automatic select the best imputer-
 use gridsearchCV, present in sklearn
+
+
+for multivariate- 
+KNN imputer-
+if a value is missing in a row than fill value with that value whose row is most similar to
+it. similarity is found using euclidean distance
+use KNN for that and k value if 3 then take mean of those, if 1 then directly that neighbour value.
+but here values are missing so use nan-eucledian distance
+nan-euclidean calc. as 
+only put those in formulae whose x and y are given in sqrt(w*(x1-y1)^2+(x2-y2)^2) and
+w is total no. of col. divided by no. of col whose both value given
+
+more accurate
+more no. of calculation
+when deployed so full train set should be on server so speed less and more memory
+better result then mean/median
+
+iterative imputer MICE-
+multivariate imputation by chained equation
+
+
+MCAR means data is not collected from source data missing
+MAR(missing at random) means cell is optional so by will not put value there, here we can fill value by other cols semilarity like age
+MNAR means jaanmujhkar data hataya gaya hai, so no relation between other cols
+
+assumption for this-
+use MICE when MAR
+
+same disadv as KNN imputer
+
+
+replace nan with mean of that col.
+then start from left col and put back its nan value there of that col. and treat that col.
+as output and remaing col as input and ofnthe col. value that is nan pick them as test set and other as train and now apply any ML model to predict that
+Now same process repeated go to 2nd col put its nan there and treat it as output col and apply ML model to predict the nan value
+and so on..
+Now this is stage 1
+ and now we cal. difference of stage0(mean replacement) and stage1 then we get all 0 except the nan value cells, so repeate process like stage 1 we do rplace with nan then predict like that and get stage2 and do this some iterations to make the difference small
+ 
